@@ -108,7 +108,7 @@ SELECT
     ) AS Attrition_Rate_Male
 FROM `ibm-hr-analytics-Employee_Attrition_Performance.Attrition`
 ```
-In this SQL query, we utilize the `ROUND` function to obtain results rounded to two decimal points. We also employ `SUM` in combination with `CASE WHEN` for distinct purposes. Initially, it helps us count the number of female employees who have left the company and determines the percentage they represent among all departing employees. The same process is then repeated for male employees.
+The provided SQL query calculates the percentage of male and female employees who have left the company (attrition) among all employees who have left. It employs the `CASE WHEN` construct within the `SUM` function to count specific conditions (female or male employees with attrition), dividing these counts by the total number of attritions to obtain a percentage. The `ROUND` function is then used to format these percentages to two decimal places. This approach effectively segments the attrition rate by gender, providing insights into gender-specific attrition trends within the organization.
 | Attrition_Rate_Female | Attrition_Rate_Male |
 |-----------------------|---------------------|
 | 36.71                 | 63.29               |
@@ -161,7 +161,7 @@ SELECT
 FROM `ibm-hr-analytics-Employee_Attrition_Performance.Attrition` 
 GROUP BY Gender
 ```
-This SQL query employs the aggregate function `AVG` to calculate the average of values within a specific column. We utilize the `GROUP BY` statement to differentiate the averages between male and female employees. Additionally, we apply the `ROUND` function to ensure the results are rounded to two decimal points for clarity.
+This SQL query calculates the average monthly income, work-life balance, job involvement, and job satisfaction for each gender in the workforce. It uses the `AVG` function to compute these averages, groups the results by gender using the `GROUP BY` clause.
 | Gender | AVG_Monthly_Income | AVG_Work_Life_Balance | AVG_Job_Involvement | AVG_Job_Satisfaction |
 |--------|--------------------|------------------------|----------------------|-----------------------|
 | Female | 6686.57            | 2.76                   | 2.71                 | 2.68                  |
